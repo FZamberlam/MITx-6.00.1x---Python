@@ -78,13 +78,13 @@ def getAvailableLetters(lettersGuessed):
     '''
     import string
 
-    letters = string.ascii_lowercase
+    alphabet = string.ascii_lowercase
     availableLetters = ''
-    for l in letters:
-        if l in lettersGuessed:
+    for letter in alphabet:
+        if letter in lettersGuessed:
             availableLetters += ''
         else:
-            availableLetters += l
+            availableLetters += letter
     return availableLetters
 
 def hangman(secretWord):
