@@ -67,7 +67,7 @@ def getGuessedWord(secretWord, lettersGuessed):
         if l in lettersGuessed:
             word += l
         else:
-            word += '_ '
+            word += ' _ '
     return word          
 
 def getAvailableLetters(lettersGuessed):
@@ -122,7 +122,7 @@ def hangman(secretWord):
             break
     
         print("You have", guessesLeft, "guesses left.")
-        print("Available letters:", getAvailableLetters(lettersGuessed))
+        print("Available letters:", getAvailableLetters(lettersGuessed), end='')
         
         guess = input("Please guess a letter: ").lower()
         
