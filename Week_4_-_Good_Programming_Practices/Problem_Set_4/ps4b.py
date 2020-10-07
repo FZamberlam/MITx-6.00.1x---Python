@@ -124,9 +124,49 @@ def playGame(wordList):
 
     wordList: list (string)
     """
-    # TO DO... <-- Remove this comment when you code this function
-    print("playGame not yet implemented.") # <-- Remove this when you code this function
-
+    option = ''
+    player = ''
+    
+    while True:        
+        option = input("Enter 'n' to deal a new hand, 'r' to replay the last hand, or 'e' to end game: ")
+    
+        if option == 'n':
+            hand = dealHand(HAND_SIZE)
+            while True:
+                player = input("Enter 'u' to have yourself play, 'c' to have the computer play: ")
+            
+                if player == 'c':
+                    compPlayHand(hand, wordList, HAND_SIZE)
+                    break
+                
+                elif player == 'u':
+                    playHand(hand, wordList, HAND_SIZE)
+                    break
+                    
+                else:
+                    print("Invalid command.")
+            
+        elif option == 'r':
+            try:
+                hand
+                player = input("Enter 'u' to have yourself play, 'c' to have the computer play: ")
+            
+                if player == 'c':
+                    compPlayHand(hand, wordList, HAND_SIZE)
+                
+                elif player == 'u':
+                    playHand(hand, wordList, HAND_SIZE)
+                    
+                else:
+                    print("Invalid command.")  
+            except:
+                print("You have not played a hand yet. Please play a new hand first!") 
+            
+        elif option == 'e':
+            break
+        
+        else:
+            print("Invalid option!")
         
 #
 # Build data structures used for entire session and play game
